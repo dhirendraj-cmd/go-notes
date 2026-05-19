@@ -25,6 +25,9 @@ func main(){
 	// get by id
 	http.HandleFunc("/notes/get", notes.GetNoteById(db))
 
+	// delete by id
+	http.HandleFunc("/notes/delete", notes.DeleteNotesById(db))
+
 
 	if err := http.ListenAndServe(":8080", nil); err!=nil{
 		log.Fatal("Error while starting HTTP Server: ", err)
