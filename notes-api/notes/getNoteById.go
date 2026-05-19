@@ -11,7 +11,7 @@ import (
 
 
 func GetNoteById(db *sql.DB) http.HandlerFunc {
-	fmt.Println("Get ALL notes.....")
+	fmt.Println("Get notes by Id .....")
 
 	return func(w http.ResponseWriter, r *http.Request)  {
 
