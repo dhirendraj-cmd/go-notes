@@ -11,7 +11,7 @@ const (
 	host   	 = "localhost"
 	port     = 5432
 	user     = "postgres"
-	password = "Devilisafoot123"
+	password = "<your-password>"
 	dbname   = "gonotesapi"
 )
 
