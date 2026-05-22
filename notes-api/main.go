@@ -10,6 +10,19 @@ import (
 
 
 
+func handler(w http.ResponseWriter, r *http.Request){
+	if r.ProtoMajor == 2{
+		fmt.Println("HTTP/2")
+	} else {
+		fmt.Println("HTTP/1")
+	}
+
+
+	fmt.Fprintf(w, "Hello, from handler!")
+
+}
+
+
 func main(){
 
 	fmt.Print("Notes API!!!")
@@ -17,6 +30,7 @@ func main(){
 	db := database.Connection()
 	defer db.Close()
 	
+	http.HandleFunc("/test/", handler)
 
 	// handler function creation
 	http.HandleFunc("/notes/create", notes.CreateNote(db))
