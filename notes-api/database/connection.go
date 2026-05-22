@@ -28,9 +28,6 @@ func Connection() *sql.DB {
 		panic(err)
 	}
 
-	// defer db.Close()
-
-
 
 	// setting pool connections
 	db.SetMaxOpenConns(25)
